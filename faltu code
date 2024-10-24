@@ -1,0 +1,77 @@
+
+// // app.post("/create-subscription", async (req, res) => {
+// //   const { email, pricePlan } = req.body;
+// //   console.log(email, pricePlan);
+// //   try {
+// //     // Create a new customer or retrieve an existing one
+// //     const customer = await stripe.customers.create({
+// //       email,
+// //     });
+
+// //     // Create a subscription for the selected plan
+// //     const subscription = await createSubscription(
+// //       customer.id,
+// //       priceIDs[pricePlan]
+// //     );
+
+// //     res.send({
+// //       subscriptionId: subscription.id,
+// //       clientSecret: subscription.latest_invoice.payment_intent.client_secret,
+// //     });
+// //   } catch (error) {
+// //     res.status(400).send({ error: { message: error.message } });
+// //   }
+// // });
+
+// app.post("/create-subscription", async (req, res) => {
+//   const { email, pricePlan } = req.body;
+//   try {
+//     // Create a new customer
+//     const customer = await stripe.customers.create({ email });
+
+//     // Create a subscription for the customer based on the selected plan
+//     const subscription = await createSubscription(
+//       customer.id,
+//       priceIDs[pricePlan]
+//     );
+
+//     // Send client secret to frontend
+//     res.send({
+//       subscriptionId: subscription.id,
+//       clientSecret: subscription.latest_invoice.payment_intent.client_secret,
+//     });
+//   } catch (error) {
+//     res.status(400).send({ error: { message: error.message } });
+//   }
+// });
+
+// app.post("/create-subscription", async (req, res) => {
+//   const { email, pricePlan } = req.body;
+
+//   try {
+// // Check for existing customer by email
+// const existingCustomers = await stripe.customers.list({ email });
+// const customer =
+//   existingCustomers.data.length > 0
+//     ? existingCustomers.data[0]
+//     : await stripe.customers.create({ email });
+
+//     // Create a subscription for the customer based on the selected plan
+//     const subscription = await createSubscription(
+//       customer.id,
+//       priceIDs[pricePlan]
+//     );
+
+//     // Send client secret to frontend
+//     res.send({
+//       subscriptionId: subscription.id,
+//       clientSecret: subscription.latest_invoice.payment_intent.client_secret,
+//     });
+//   } catch (error) {
+//     console.error("Error creating subscription:", error);
+//     res.status(400).send({ error: { message: error.message } });
+//   }
+// });
+
+// Create a checkout session
+
